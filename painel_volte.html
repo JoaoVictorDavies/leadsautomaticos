@@ -1,0 +1,531 @@
+
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CRM Volte - Leads Extraídos</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="bg-gray-50 text-gray-800 p-4 md:p-8">
+        <div class="max-w-7xl mx-auto">
+            
+            <!-- Header do Painel -->
+            <div class="bg-white rounded-lg shadow-sm p-6 mb-6 flex flex-col md:flex-row justify-between items-center border border-gray-200">
+                <div>
+                    <h1 class="text-2xl font-bold text-gray-900 flex items-center gap-2">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                        VOLTE Comercial
+                    </h1>
+                    <p class="text-gray-500 text-sm mt-1">Base de dados mestre de prospecção.</p>
+                </div>
+                <div class="mt-4 md:mt-0 bg-blue-50 border border-blue-100 px-4 py-3 rounded-lg shadow-sm text-center">
+                    <span class="block text-xs text-blue-600 font-semibold uppercase tracking-wider">Total de Leads na Base</span>
+                    <span class="block text-2xl font-black text-blue-800">37</span>
+                </div>
+            </div>
+            
+            <!-- Tabela de Leads -->
+            <div class="bg-white rounded-lg shadow border border-gray-200 overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse whitespace-nowrap">
+                        <thead>
+                            <tr class="bg-gray-800 text-white text-sm uppercase tracking-wider">
+                                <th class="p-4 font-semibold">Estabelecimento</th>
+                                <th class="p-4 font-semibold">Telefone</th>
+                                <th class="p-4 font-semibold">Presença Web</th>
+                                <th class="p-4 font-semibold text-right">Ação Comercial</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">Il Barbuto Alameda</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/Il+Barbuto+Alameda/data=!4m7!3m6!1s0x94dce40b1922b1db:0xe0c8fcddbbd14001!8m2!3d-25.4325632!4d-49.2812107!16s%2Fg%2F11bz0bgxvc!19sChIJ27EiGQvk3JQRAUDRu938yOA?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 99229-4888</td>
+            <td class="p-4"><span class="text-gray-400 text-sm">Sem site</span></td>
+            <td class="p-4 text-right"><a href="https://wa.me/5541992294888?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">Restaurante Cantina Lisboa | Centro</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/Restaurante+Cantina+Lisboa+%7C+Centro/data=!4m7!3m6!1s0x94dce47194a57b43:0xc101695be4c8d970!8m2!3d-25.437939!4d-49.275463!16s%2Fg%2F1tncv10y!19sChIJQ3ullHHk3JQRcNnI5FtpAcE?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 3322-0090</td>
+            <td class="p-4"><a href="https://cantinalisboa.com.br/" target="_blank" class="text-blue-600 hover:underline text-sm truncate max-w-xs block">Visitar Site</a></td>
+            <td class="p-4 text-right"><a href="https://wa.me/554133220090?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">Restaurante Nonna Giovanna</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/Restaurante+Nonna+Giovanna/data=!4m7!3m6!1s0x94dce41371b0e28b:0xc06ec3c7c22caeaf!8m2!3d-25.4281688!4d-49.2697899!16s%2Fg%2F1tffw27s!19sChIJi-KwcRPk3JQRr64swsfDbsA?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 3022-4653</td>
+            <td class="p-4"><span class="text-gray-400 text-sm">Sem site</span></td>
+            <td class="p-4 text-right"><a href="https://wa.me/554130224653?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">Restaurante Baiak</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/Restaurante+Baiak/data=!4m7!3m6!1s0x94dce5c566460f4d:0xd1fd970993dd6072!8m2!3d-25.4287095!4d-49.2625233!16s%2Fg%2F11j84wng19!19sChIJTQ9GZsXl3JQRcmDdkwmX_dE?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 99547-7233</td>
+            <td class="p-4"><a href="http://rcnews.com.br/" target="_blank" class="text-blue-600 hover:underline text-sm truncate max-w-xs block">Visitar Site</a></td>
+            <td class="p-4 text-right"><a href="https://wa.me/5541995477233?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">Restaurante Nina Curitiba</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/Restaurante+Nina+Curitiba/data=!4m7!3m6!1s0x94dce53dfdb67117:0xb5e6eadeea3792ca!8m2!3d-25.4291877!4d-49.2646362!16s%2Fg%2F11hps3c3b7!19sChIJF3G2_T3l3JQRypI36t7q5rU?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 99967-0350</td>
+            <td class="p-4"><span class="text-gray-400 text-sm">Sem site</span></td>
+            <td class="p-4 text-right"><a href="https://wa.me/5541999670350?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">ASU Restaurante</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/ASU+Restaurante/data=!4m7!3m6!1s0x94dce5e2664b7fd7:0x122cb6b589168791!8m2!3d-25.431187!4d-49.2817473!16s%2Fg%2F11p002893p!19sChIJ139LZuLl3JQRkYcWibW2LBI?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">Não informado</td>
+            <td class="p-4"><a href="https://linktr.ee/restauranteasu" target="_blank" class="text-blue-600 hover:underline text-sm truncate max-w-xs block">Visitar Site</a></td>
+            <td class="p-4 text-right"><span class="bg-gray-300 text-gray-500 font-bold py-2 px-4 rounded inline-flex items-center text-sm cursor-not-allowed">Sem Telefone</span></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">DUQ Gastronomia</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/DUQ+Gastronomia/data=!4m7!3m6!1s0x94dce532ed9fb10d:0x3238278d981f4777!8m2!3d-25.4323317!4d-49.2786851!16s%2Fg%2F11sjv2ps_s!19sChIJDbGf7TLl3JQRd0cfmI0nODI?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 98854-4751</td>
+            <td class="p-4"><a href="https://duq.com.br/" target="_blank" class="text-blue-600 hover:underline text-sm truncate max-w-xs block">Visitar Site</a></td>
+            <td class="p-4 text-right"><a href="https://wa.me/5541988544751?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">Pede Thai Restobar</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/Pede+Thai+Restobar/data=!4m7!3m6!1s0x94dce5af582e2701:0x5b46fadc5e6f0c16!8m2!3d-25.4307489!4d-49.2619872!16s%2Fg%2F11p567l66t!19sChIJAScuWK_l3JQRFgxvXtz6Rls?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 3010-4273</td>
+            <td class="p-4"><a href="http://www.pedethai.com.br/" target="_blank" class="text-blue-600 hover:underline text-sm truncate max-w-xs block">Visitar Site</a></td>
+            <td class="p-4 text-right"><a href="https://wa.me/554130104273?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">Madero Steak House Comendador Araújo</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/Madero+Steak+House+Comendador+Ara%C3%BAjo/data=!4m7!3m6!1s0x94dce47312815ddf:0x645adeff7680eec6!8m2!3d-25.4345625!4d-49.2777233!16s%2Fg%2F1tjhyt7f!19sChIJ312BEnPk3JQRxu6Adv_eWmQ?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 3012-2390</td>
+            <td class="p-4"><a href="http://www.restaurantemadero.com.br/" target="_blank" class="text-blue-600 hover:underline text-sm truncate max-w-xs block">Visitar Site</a></td>
+            <td class="p-4 text-right"><a href="https://wa.me/554130122390?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">Porcini Trattoria</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/Porcini+Trattoria/data=!4m7!3m6!1s0x94dce476c435496d:0x6eebfce215442285!8m2!3d-25.4399527!4d-49.2795704!16s%2Fg%2F1tgd7pdh!19sChIJbUk1xHbk3JQRhSJEFeL8624?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 3023-5117</td>
+            <td class="p-4"><a href="https://www.porcini.com.br/" target="_blank" class="text-blue-600 hover:underline text-sm truncate max-w-xs block">Visitar Site</a></td>
+            <td class="p-4 text-right"><a href="https://wa.me/554130235117?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">Calabouço Restaurante e Pizzaria</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/Calabou%C3%A7o+Restaurante+e+Pizzaria/data=!4m7!3m6!1s0x94dce41a51340f45:0x87e798a379a2d487!8m2!3d-25.4185332!4d-49.271074!16s%2Fg%2F1td0v0v9!19sChIJRQ80URrk3JQRh9SieaOY54c?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 3254-6112</td>
+            <td class="p-4"><a href="https://m.facebook.com/Calabou%C3%A7o-Restaurante-e-Pizzaria-401681513292443/?locale2=pt_BR" target="_blank" class="text-blue-600 hover:underline text-sm truncate max-w-xs block">Visitar Site</a></td>
+            <td class="p-4 text-right"><a href="https://wa.me/554132546112?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">Hai Yo</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/Hai+Yo/data=!4m7!3m6!1s0x94dce53edf716037:0x85652b70e7e20fa2!8m2!3d-25.4345415!4d-49.2765606!16s%2Fg%2F11l00dsgxh!19sChIJN2Bx3z7l3JQRog_i53ArZYU?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 99961-1599</td>
+            <td class="p-4"><a href="http://instagram.com/haiyo_restaurante" target="_blank" class="text-blue-600 hover:underline text-sm truncate max-w-xs block">Visitar Site</a></td>
+            <td class="p-4 text-right"><a href="https://wa.me/5541999611599?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">Restaurante Gato Preto</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/Restaurante+Gato+Preto/data=!4m7!3m6!1s0x94dce40d139c1a7f:0xa064ce30c9a856b1!8m2!3d-25.4302184!4d-49.2757155!16s%2Fg%2F1wf39rwx!19sChIJfxqcEw3k3JQRsVaoyTDOZKA?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 3223-5717</td>
+            <td class="p-4"><a href="https://www.restaurantegatopreto.com/" target="_blank" class="text-blue-600 hover:underline text-sm truncate max-w-xs block">Visitar Site</a></td>
+            <td class="p-4 text-right"><a href="https://wa.me/554132235717?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">La Mafia Trattoria</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/La+Mafia+Trattoria/data=!4m7!3m6!1s0x94dce3f57ebb1405:0x3d133bda4c9cc3a6!8m2!3d-25.4328443!4d-49.2844735!16s%2Fg%2F11dxpgrpwj!19sChIJBRS7fvXj3JQRpsOcTNo7Ez0?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 3779-7555</td>
+            <td class="p-4"><a href="https://www.instagram.com/lamafiacuritiba/" target="_blank" class="text-blue-600 hover:underline text-sm truncate max-w-xs block">Visitar Site</a></td>
+            <td class="p-4 text-right"><a href="https://wa.me/554137797555?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">Terra Madre Ristorante</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/Terra+Madre+Ristorante/data=!4m7!3m6!1s0x94dce3f1f43aabbd:0x47296b2879f6a761!8m2!3d-25.4321568!4d-49.2938883!16s%2Fg%2F1tg_y754!19sChIJvas69PHj3JQRYaf2eShrKUc?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 3335-6070</td>
+            <td class="p-4"><a href="https://www.terramadreristorante.com.br/" target="_blank" class="text-blue-600 hover:underline text-sm truncate max-w-xs block">Visitar Site</a></td>
+            <td class="p-4 text-right"><a href="https://wa.me/554133356070?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">Restaurante Maru Centro</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/Restaurante+Maru+Centro/data=!4m7!3m6!1s0x94dce40d3b305105:0xee6ae3d4e9927179!8m2!3d-25.4312809!4d-49.2760949!16s%2Fg%2F1tqp_d6c!19sChIJBVEwOw3k3JQReXGS6dTjau4?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 3082-9966</td>
+            <td class="p-4"><a href="http://www.restaurantemaru.com.br/" target="_blank" class="text-blue-600 hover:underline text-sm truncate max-w-xs block">Visitar Site</a></td>
+            <td class="p-4 text-right"><a href="https://wa.me/554130829966?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">Terrazza 40</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/Terrazza+40/data=!4m7!3m6!1s0x94dce36a903e847b:0xd751061d0d0e04be!8m2!3d-25.4303297!4d-49.2919619!16s%2Fg%2F11hgk3m29x!19sChIJe4Q-kGrj3JQRvgQODR0GUdc?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 3014-0141</td>
+            <td class="p-4"><a href="https://www.terrazza40.com/" target="_blank" class="text-blue-600 hover:underline text-sm truncate max-w-xs block">Visitar Site</a></td>
+            <td class="p-4 text-right"><a href="https://wa.me/554130140141?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">Le Réchaud</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/Le+R%C3%A9chaud/data=!4m7!3m6!1s0x94dce3e4d68757ab:0xebd2e110df140896!8m2!3d-25.4259472!4d-49.294651!16s%2Fg%2F1ptw7ngt1!19sChIJq1eH1uTj3JQRlggU3xDh0us?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 3339-6006</td>
+            <td class="p-4"><a href="http://www.lerechaud.com.br/" target="_blank" class="text-blue-600 hover:underline text-sm truncate max-w-xs block">Visitar Site</a></td>
+            <td class="p-4 text-right"><a href="https://wa.me/554133396006?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">Zapata Mexican Bar</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/Zapata+Mexican+Bar/data=!4m7!3m6!1s0x94dce6a6ecf97267:0x2ecaea605cb8d65b!8m2!3d-25.4073203!4d-49.2706383!16s%2Fg%2F1x6q2xbj!19sChIJZ3L57Kbm3JQRW9a4XGDqyi4?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 99198-2764</td>
+            <td class="p-4"><a href="https://zapatabrasil.com.br/" target="_blank" class="text-blue-600 hover:underline text-sm truncate max-w-xs block">Visitar Site</a></td>
+            <td class="p-4 text-right"><a href="https://wa.me/5541991982764?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">QCeviche Restaurante</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/QCeviche+Restaurante/data=!4m7!3m6!1s0x94dce52df8399621:0x1db14e924b89aa26!8m2!3d-25.4379406!4d-49.277274!16s%2Fg%2F11fgj75cwq!19sChIJIZY5-C3l3JQRJqqJS5JOsR0?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 3197-2755</td>
+            <td class="p-4"><a href="https://www.qceviche.com.br/" target="_blank" class="text-blue-600 hover:underline text-sm truncate max-w-xs block">Visitar Site</a></td>
+            <td class="p-4 text-right"><a href="https://wa.me/554131972755?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">Rango de Planta - Comida Vegana</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/Rango+de+Planta+-+Comida+Vegana/data=!4m7!3m6!1s0x94dce3da64d7a203:0x4e43f8fe47bf0e63!8m2!3d-25.4263029!4d-49.2696676!16s%2Fg%2F11q7f0dst4!19sChIJA6LXZNrj3JQRYw6_R_74Q04?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 99981-8282</td>
+            <td class="p-4"><a href="http://www.rangodeplanta.com.br/" target="_blank" class="text-blue-600 hover:underline text-sm truncate max-w-xs block">Visitar Site</a></td>
+            <td class="p-4 text-right"><a href="https://wa.me/5541999818282?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">La Campesina Galeteria Italiana</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/La+Campesina+Galeteria+Italiana/data=!4m7!3m6!1s0x94dce574cb73043d:0x50bb7f50db09ba44!8m2!3d-25.4334076!4d-49.2813837!16s%2Fg%2F11h4lwdgqt!19sChIJPQRzy3Tl3JQRRLoJ21B_u1A?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 3319-3533</td>
+            <td class="p-4"><a href="http://www.lacampesina.com.br/" target="_blank" class="text-blue-600 hover:underline text-sm truncate max-w-xs block">Visitar Site</a></td>
+            <td class="p-4 text-right"><a href="https://wa.me/554133193533?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">Barbaran</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/Barbaran/data=!4m7!3m6!1s0x94dce40a4d6070a9:0xf2a04688209520cf!8m2!3d-25.4311463!4d-49.281556!16s%2Fg%2F11b696vt1d!19sChIJqXBgTQrk3JQRzyCVIIhGoPI?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 3322-2912</td>
+            <td class="p-4"><a href="https://pt-br.facebook.com/BarBaranUcrania" target="_blank" class="text-blue-600 hover:underline text-sm truncate max-w-xs block">Visitar Site</a></td>
+            <td class="p-4 text-right"><a href="https://wa.me/554133222912?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">Mafalda Café e Bistrô</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/Mafalda+Caf%C3%A9+e+Bistr%C3%B4/data=!4m7!3m6!1s0x94dce4154e39e549:0x15991150979bc6cf!8m2!3d-25.4276975!4d-49.2644925!16s%2Fg%2F11b75ctpsc!19sChIJSeU5ThXk3JQRz8abl1ARmRU?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">Não informado</td>
+            <td class="p-4"><a href="https://www.instagram.com/cafe.mafalda/" target="_blank" class="text-blue-600 hover:underline text-sm truncate max-w-xs block">Visitar Site</a></td>
+            <td class="p-4 text-right"><span class="bg-gray-300 text-gray-500 font-bold py-2 px-4 rounded inline-flex items-center text-sm cursor-not-allowed">Sem Telefone</span></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">Restaurante Imperial - Curityba</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/Restaurante+Imperial+-+Curityba/data=!4m7!3m6!1s0x94dce46c56181539:0xa29a0b0a590b62d3!8m2!3d-25.4329926!4d-49.2716419!16s%2Fg%2F1vxw9dmx!19sChIJORUYVmzk3JQR02ILWQoLmqI?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 3222-1323</td>
+            <td class="p-4"><a href="https://www.instagram.com/restauranteimperial1966?igsh=MXhiMnI5ODVpM2k0dg==" target="_blank" class="text-blue-600 hover:underline text-sm truncate max-w-xs block">Visitar Site</a></td>
+            <td class="p-4 text-right"><a href="https://wa.me/554132221323?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">A Ostra Bêbada</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/A+Ostra+B%C3%AAbada/data=!4m7!3m6!1s0x94dce40d4835abdd:0x61a733084de8b96d!8m2!3d-25.4315054!4d-49.2751979!16s%2Fg%2F11ggsnzz1t!19sChIJ3as1SA3k3JQRbbnoTQgzp2E?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 3322-0940</td>
+            <td class="p-4"><span class="text-gray-400 text-sm">Sem site</span></td>
+            <td class="p-4 text-right"><a href="https://wa.me/554133220940?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">Taberna do Eliseu</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/Taberna+do+Eliseu/data=!4m7!3m6!1s0x94dce33821c383a1:0x7846d22d6f98a4d0!8m2!3d-25.449433!4d-49.299248!16s%2Fg%2F11zx15jjy1!19sChIJoYPDITjj3JQR0KSYby3SRng?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 98817-2033</td>
+            <td class="p-4"><span class="text-gray-400 text-sm">Sem site</span></td>
+            <td class="p-4 text-right"><a href="https://wa.me/5541988172033?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">Osteria Lupita</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/Osteria+Lupita/data=!4m7!3m6!1s0x94dce56b9221a891:0x494db41160c6b899!8m2!3d-25.4314626!4d-49.2752386!16s%2Fg%2F11rcqnlkr7!19sChIJkaghkmvl3JQRmbjGYBG0TUk?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 99200-5477</td>
+            <td class="p-4"><span class="text-gray-400 text-sm">Sem site</span></td>
+            <td class="p-4 text-right"><a href="https://wa.me/5541992005477?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">Oidē</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/Oid%C4%93/data=!4m7!3m6!1s0x94dce5b529de98a3:0xbd185a5a1077420!8m2!3d-25.4370494!4d-49.2792634!16s%2Fg%2F11h77zh786!19sChIJo5jeKbXl3JQRIHQHoaWF0Qs?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 3093-5471</td>
+            <td class="p-4"><a href="http://flow.page/oide" target="_blank" class="text-blue-600 hover:underline text-sm truncate max-w-xs block">Visitar Site</a></td>
+            <td class="p-4 text-right"><a href="https://wa.me/554130935471?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">Badida Sete</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/Badida+Sete/data=!4m7!3m6!1s0x94dce3891297d057:0xe763fc3037e79ef1!8m2!3d-25.4490632!4d-49.2958282!16s%2Fg%2F1ptz16cq8!19sChIJV9CXEonj3JQR8Z7nNzD8Y-c?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 3243-0473</td>
+            <td class="p-4"><a href="http://www.badida.com.br/" target="_blank" class="text-blue-600 hover:underline text-sm truncate max-w-xs block">Visitar Site</a></td>
+            <td class="p-4 text-right"><a href="https://wa.me/554132430473?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">Avenida Paulista - Pizza, Pasta e Vino</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/Avenida+Paulista+-+Pizza,+Pasta+e+Vino/data=!4m7!3m6!1s0x94dce473e74bf2e7:0x3d261d30af850272!8m2!3d-25.4371557!4d-49.2777638!16s%2Fg%2F1ts3mbvp!19sChIJ5_JL53Pk3JQRcgKFrzAdJj0?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 3322-1441</td>
+            <td class="p-4"><span class="text-gray-400 text-sm">Sem site</span></td>
+            <td class="p-4 text-right"><a href="https://wa.me/554133221441?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">Spaghetto</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/Spaghetto/data=!4m7!3m6!1s0x94dce474a87fbb15:0xa08f4cbc118345fc!8m2!3d-25.433106!4d-49.27981!16s%2Fg%2F1thssjjd!19sChIJFbt_qHTk3JQR_EWDEbxMj6A?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 3013-1294</td>
+            <td class="p-4"><a href="http://www.restaurantespaghetto.com/" target="_blank" class="text-blue-600 hover:underline text-sm truncate max-w-xs block">Visitar Site</a></td>
+            <td class="p-4 text-right"><a href="https://wa.me/554130131294?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">Bar Palácio</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/Bar+Pal%C3%A1cio/data=!4m7!3m6!1s0x94dce469551933f5:0x6d04d972f4dab49d!8m2!3d-25.4345018!4d-49.2677877!16s%2Fg%2F1v470hgw!19sChIJ9TMZVWnk3JQRnbTa9HLZBG0?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 3222-3626</td>
+            <td class="p-4"><span class="text-gray-400 text-sm">Sem site</span></td>
+            <td class="p-4 text-right"><a href="https://wa.me/554132223626?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">Tropilha Curitiba</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/Tropilha+Curitiba/data=!4m7!3m6!1s0x94dce473e708e0bd:0x1787fcf3184b9253!8m2!3d-25.4372222!4d-49.2780556!16s%2Fg%2F1tdpn70q!19sChIJveAI53Pk3JQRU5JLGPP8hxc?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 3085-5444</td>
+            <td class="p-4"><a href="https://tropilhacuritiba.com.br/" target="_blank" class="text-blue-600 hover:underline text-sm truncate max-w-xs block">Visitar Site</a></td>
+            <td class="p-4 text-right"><a href="https://wa.me/554130855444?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">Adega Prudente</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/Adega+Prudente/data=!4m7!3m6!1s0x94dce40b1e801145:0x913e8458eca0d429!8m2!3d-25.4325596!4d-49.2815147!16s%2Fg%2F1pt_kvgt0!19sChIJRRGAHgvk3JQRKdSg7FiEPpE?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 3121-1218</td>
+            <td class="p-4"><a href="https://www.instagram.com/adega.prudente" target="_blank" class="text-blue-600 hover:underline text-sm truncate max-w-xs block">Visitar Site</a></td>
+            <td class="p-4 text-right"><a href="https://wa.me/554131211218?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">Bourbon Bistrot | Curitiba</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/Bourbon+Bistrot+%7C+Curitiba/data=!4m7!3m6!1s0x94dce5909737dba9:0xbd6f0124acbf0a3e!8m2!3d-25.430533!4d-49.2734262!16s%2Fg%2F11sj6wgjkp!19sChIJqds3l5Dl3JQRPgq_rCQBb70?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 3221-4600</td>
+            <td class="p-4"><a href="https://bourbonbistrot.com.br/home/" target="_blank" class="text-blue-600 hover:underline text-sm truncate max-w-xs block">Visitar Site</a></td>
+            <td class="p-4 text-right"><a href="https://wa.me/554132214600?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+        <tr class="border-b hover:bg-gray-50 transition-colors">
+            <td class="p-4">
+                <p class="font-semibold text-gray-800">RM Restaurante Sabor do Sul</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">restaurantes no Centro, Curitiba</span>
+                    <a href="https://www.google.com/maps/place/RM+Restaurante+Sabor+do+Sul/data=!4m7!3m6!1s0x94dce506f78e7eeb:0xe06e1a34ed0e44df!8m2!3d-25.4316989!4d-49.273605!16s%2Fg%2F11syf8yjn_!19sChIJ636O9wbl3JQR30QO7TQabuA?authuser=0&hl=pt-BR&g_ep=EgoyMDI2MTAxMy4wIJJjKgBIAVAD&rclk=1" target="_blank" class="text-xs text-blue-500 hover:underline">Ver no Maps</a>
+                </div>
+            </td>
+            <td class="p-4 text-gray-600 font-mono text-sm">(41) 99657-8316</td>
+            <td class="p-4"><a href="https://www.instagram.com/rmrestaurantesabordosul/" target="_blank" class="text-blue-600 hover:underline text-sm truncate max-w-xs block">Visitar Site</a></td>
+            <td class="p-4 text-right"><a href="https://wa.me/5541996578316?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte%20e%20n%C3%B3s%20criamos%20uma%20tecnologia%20que%20l%C3%AA%20a%20foto%20do%20seu%20card%C3%A1pio%20e%20monta%20o%20seu%20sistema%20de%20gest%C3%A3o%20sozinho%20em%20minutos.%20Quer%20ver%20a%20m%C3%A1gica%20acontecer%3F" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center text-sm transition-colors shadow">Chamar no WhatsApp</a></td>
+        </tr>
+        
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+    </body>
+    </html>
+    
