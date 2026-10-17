@@ -6,16 +6,17 @@ const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_KEY as string
 const supabase = createClient(supabaseUrl, supabaseKey)
 
+// MENSAGEM DO OFLUXO CONFIGURADA
+const TEXTO_WPP = `🍽️ Conheça o O!Fluxo!\n\n📲 Seus garçons lançam os pedidos pelo celular e eles chegam direto à cozinha!\n\n🚀 Está começando agora? Envie uma foto do seu cardápio e o sistema configura sua loja automaticamente.\n\n🆓 Teste grátis!\n\n👉 Crie sua loja e experimente:\nhttps://o-fluxo-aplicativo-oficial.vercel.app/acesso-loja?affiliate_ref=7ef3fdd`;
+
 export default function CRM() {
   const [leads, setLeads] = useState<any[]>([])
   
-  // Filtros e Busca
   const [busca, setBusca] = useState('')
   const [filtroStatus, setFiltroStatus] = useState('Todos')
   const [filtroCidade, setFiltroCidade] = useState('Todas')
   const [filtroBairro, setFiltroBairro] = useState('Todos')
   
-  // Modal Novo Lead
   const [modalAberto, setModalAberto] = useState(false)
   const [novoLead, setNovoLead] = useState({ nome: '', telefone: '', website: '', cidade: '', bairro: '', nicho: '' })
 
@@ -37,6 +38,17 @@ export default function CRM() {
     await supabase.from('leads').update({ observacao: texto }).eq('id', id)
   }
 
+  // NOVA FUNÇÃO: Disparo e Atualização de Status
+  async function handleWhatsAppClick(lead: any) {
+    // 1. Atualiza silenciosamente no banco para 'Contatado'
+    await mudarStatus(lead.id, 'Contatado');
+    
+    // 2. Prepara o link e abre a aba do WhatsApp
+    const numeroLimpo = lead.telefone.replace(/\D/g, '');
+    const url = `https://wa.me/55${numeroLimpo}?text=${encodeURIComponent(TEXTO_WPP)}`;
+    window.open(url, '_blank');
+  }
+
   async function cadastrarLeadManual(e: React.FormEvent) {
     e.preventDefault()
     const leadManual = {
@@ -51,11 +63,9 @@ export default function CRM() {
     carregarLeads()
   }
 
-  // Extração de listas únicas para os selects de filtro
   const cidades = useMemo(() => ['Todas', ...Array.from(new Set(leads.map(l => l.cidade).filter(Boolean)))], [leads])
   const bairros = useMemo(() => ['Todos', ...Array.from(new Set(leads.map(l => l.bairro).filter(Boolean)))], [leads])
 
-  // Aplicação dos filtros reativos
   const leadsFiltrados = useMemo(() => {
     return leads.filter(lead => {
       const matchBusca = lead.nome.toLowerCase().includes(busca.toLowerCase()) || lead.telefone.includes(busca)
@@ -81,10 +91,7 @@ export default function CRM() {
               <span className="text-xs text-slate-500 uppercase font-bold block">Total Base</span>
               <span className="text-xl font-black text-slate-800">{leads.length}</span>
             </div>
-            <button 
-              onClick={() => setModalAberto(true)}
-              className="bg-slate-900 text-white px-5 py-2 rounded-lg font-bold hover:bg-slate-800 transition-all shadow-md"
-            >
+            <button onClick={() => setModalAberto(true)} className="bg-slate-900 text-white px-5 py-2 rounded-lg font-bold hover:bg-slate-800 transition-all shadow-md">
               + Novo Lead
             </button>
           </div>
@@ -94,15 +101,8 @@ export default function CRM() {
         <div className="bg-white p-4 rounded-xl shadow-sm border border-slate-200 grid grid-cols-1 md:grid-cols-4 gap-4">
           <div className="relative">
             <span className="absolute left-3 top-3 text-slate-400">🔍</span>
-            <input 
-              type="text" 
-              placeholder="Buscar restaurante ou telefone..." 
-              value={busca}
-              onChange={(e) => setBusca(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-900 outline-none"
-            />
+            <input type="text" placeholder="Buscar restaurante ou telefone..." value={busca} onChange={(e) => setBusca(e.target.value)} className="w-full pl-10 pr-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-900 outline-none" />
           </div>
-          
           <select value={filtroStatus} onChange={(e) => setFiltroStatus(e.target.value)} className="w-full p-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-900 outline-none font-medium">
             <option value="Todos">Todos os Status</option>
             <option value="Novo">Novo</option>
@@ -111,11 +111,9 @@ export default function CRM() {
             <option value="Fechado">Fechado</option>
             <option value="Recusado">Recusado</option>
           </select>
-
           <select value={filtroCidade} onChange={(e) => setFiltroCidade(e.target.value)} className="w-full p-2 border border-slate-300 rounded-lg outline-none font-medium">
             {cidades.map(c => <option key={c} value={c}>{c === 'Todas' ? 'Todas as Cidades' : c}</option>)}
           </select>
-
           <select value={filtroBairro} onChange={(e) => setFiltroBairro(e.target.value)} className="w-full p-2 border border-slate-300 rounded-lg outline-none font-medium">
             {bairros.map(b => <option key={b} value={b}>{b === 'Todos' ? 'Todos os Bairros' : b}</option>)}
           </select>
@@ -148,13 +146,15 @@ export default function CRM() {
                     </td>
                     <td className="p-4">
                       <p className="font-mono text-sm text-slate-700 font-bold mb-2">{lead.telefone}</p>
-                      <a 
-                        href={`https://wa.me/55${lead.telefone.replace(/\D/g, '')}?text=Ol%C3%A1%2C%20vi%20voc%C3%AAs%20no%20Google.%20Sou%20da%20Volte...`}
-                        target="_blank"
-                        className="bg-[#25D366] text-white px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-[#1ebd5a] transition-all inline-flex items-center gap-1 shadow-sm"
+                      
+                      {/* BOTÃO ATUALIZADO */}
+                      <button 
+                        onClick={() => handleWhatsAppClick(lead)}
+                        className="bg-[#25D366] text-white px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-[#1ebd5a] transition-all inline-flex items-center gap-1 shadow-sm border-none cursor-pointer"
                       >
-                        WhatsApp
-                      </a>
+                        Enviar WhatsApp
+                      </button>
+
                     </td>
                     <td className="p-4">
                       <select 
@@ -185,61 +185,11 @@ export default function CRM() {
                     </td>
                   </tr>
                 ))}
-                {leadsFiltrados.length === 0 && (
-                  <tr>
-                    <td colSpan={4} className="p-8 text-center text-slate-500 font-medium">Nenhum lead encontrado com estes filtros.</td>
-                  </tr>
-                )}
               </tbody>
             </table>
           </div>
         </div>
       </div>
-
-      {/* Modal Cadastro Manual */}
-      {modalAberto && (
-        <div className="fixed inset-0 bg-slate-900/50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-2xl shadow-xl w-full max-w-md overflow-hidden">
-            <div className="p-6 border-b border-slate-100 flex justify-between items-center">
-              <h2 className="text-xl font-black text-slate-900">Cadastrar Lead</h2>
-              <button onClick={() => setModalAberto(false)} className="text-slate-400 hover:text-slate-600 font-bold text-xl">&times;</button>
-            </div>
-            <form onSubmit={cadastrarLeadManual} className="p-6 space-y-4">
-              <div>
-                <label className="text-xs font-bold text-slate-500 uppercase mb-1 block">Nome do Local</label>
-                <input required type="text" value={novoLead.nome} onChange={e => setNovoLead({...novoLead, nome: e.target.value})} className="w-full p-2 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-slate-900" />
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="text-xs font-bold text-slate-500 uppercase mb-1 block">Telefone</label>
-                  <input required type="text" value={novoLead.telefone} onChange={e => setNovoLead({...novoLead, telefone: e.target.value})} className="w-full p-2 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-slate-900" />
-                </div>
-                <div>
-                  <label className="text-xs font-bold text-slate-500 uppercase mb-1 block">Nicho</label>
-                  <input required type="text" placeholder="Ex: Pizzaria" value={novoLead.nicho} onChange={e => setNovoLead({...novoLead, nicho: e.target.value})} className="w-full p-2 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-slate-900" />
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="text-xs font-bold text-slate-500 uppercase mb-1 block">Cidade</label>
-                  <input required type="text" value={novoLead.cidade} onChange={e => setNovoLead({...novoLead, cidade: e.target.value})} className="w-full p-2 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-slate-900" />
-                </div>
-                <div>
-                  <label className="text-xs font-bold text-slate-500 uppercase mb-1 block">Bairro</label>
-                  <input required type="text" value={novoLead.bairro} onChange={e => setNovoLead({...novoLead, bairro: e.target.value})} className="w-full p-2 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-slate-900" />
-                </div>
-              </div>
-              <div>
-                <label className="text-xs font-bold text-slate-500 uppercase mb-1 block">Website (Opcional)</label>
-                <input type="text" value={novoLead.website} onChange={e => setNovoLead({...novoLead, website: e.target.value})} className="w-full p-2 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-slate-900" />
-              </div>
-              <button type="submit" className="w-full bg-slate-900 text-white font-bold py-3 rounded-lg hover:bg-slate-800 transition-colors mt-2">
-                Salvar Lead
-              </button>
-            </form>
-          </div>
-        </div>
-      )}
     </div>
   )
 }
