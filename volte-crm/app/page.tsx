@@ -8,8 +8,6 @@ const supabase = createClient(supabaseUrl, supabaseKey)
 
 const TEXTO_WPP = `🍽️ Conheça o O!Fluxo!\n\n📲 Seus garçons lançam os pedidos pelo celular e eles chegam direto à cozinha!\n\n🚀 Está começando agora? Envie uma foto do seu cardápio e o sistema configura sua loja automaticamente.\n\n🆓 Teste grátis!\n\n👉 Crie sua loja e experimente:\nhttps://o-fluxo-aplicativo-oficial.vercel.app/acesso-loja?affiliate_ref=7ef3fdd`
 
-// --- MOTOR DE NORMALIZAÇÃO ---
-// Ignora maiúsculas, minúsculas e acentos para agrupar corretamente
 const normalizarTexto = (texto: string | null | undefined) => {
   if (!texto) return 'desconhecido'
   return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase().trim()
@@ -18,32 +16,58 @@ const normalizarTexto = (texto: string | null | undefined) => {
 export default function CRM() {
   const [leads, setLeads] = useState<any[]>([])
   const [carregando, setCarregando] = useState(true)
+  const [statusCarga, setStatusCarga] = useState('Conectando ao banco de dados...')
   
-  // Controle de Navegação (Funil)
   const [cidadeSelecionada, setCidadeSelecionada] = useState<{norm: string, nomeExibicao: string} | null>(null)
   const [bairroSelecionado, setBairroSelecionado] = useState<{norm: string, nomeExibicao: string} | null>(null)
 
-  // Filtros internos (Quando já está dentro de um bairro)
   const [busca, setBusca] = useState('')
   const [filtroStatus, setFiltroStatus] = useState('Todos')
 
   useEffect(() => {
-    carregarLeads()
+    carregarLeadsEmMassa()
   }, [])
 
-  async function carregarLeads() {
+  // NOVA LÓGICA: Paginação Automática (Chunking) para burlar o limite de 1000
+  async function carregarLeadsEmMassa() {
     setCarregando(true)
-    const { data } = await supabase
-      .from('leads')
-      .select('*')
-      .order('data_captura', { ascending: false })
-      .limit(100000) // Limite estendido para suportar a base nacional
-    
-    if (data) setLeads(data)
+    let todosOsLeads: any[] = []
+    let de = 0
+    let tamanhoLote = 1000
+    let buscando = true
+
+    while (buscando) {
+      setStatusCarga(`Baixando lote de leads (${de} a ${de + tamanhoLote})...`)
+      
+      const { data, error } = await supabase
+        .from('leads')
+        .select('*')
+        .order('data_captura', { ascending: false })
+        .range(de, de + tamanhoLote - 1)
+
+      if (error) {
+        console.error("Erro ao buscar dados:", error)
+        buscando = false
+        break
+      }
+
+      if (data && data.length > 0) {
+        todosOsLeads = [...todosOsLeads, ...data]
+        de += tamanhoLote
+        
+        // Se vieram menos de 1000, significa que não tem mais páginas
+        if (data.length < tamanhoLote) {
+          buscando = false
+        }
+      } else {
+        buscando = false
+      }
+    }
+
+    setLeads(todosOsLeads)
     setCarregando(false)
   }
 
-  // Otimização: Atualiza a tela instantaneamente (Optimistic Update) e salva no banco em background
   async function mudarStatus(id: string, novoStatus: string) {
     setLeads(prev => prev.map(l => l.id === id ? { ...l, status: novoStatus } : l))
     await supabase.from('leads').update({ status: novoStatus }).eq('id', id)
@@ -61,13 +85,11 @@ export default function CRM() {
     window.open(url, '_blank')
   }
 
-  // --- LÓGICA DE AGRUPAMENTO MATEMÁTICO ---
   const cidadesAgrupadas = useMemo(() => {
     const mapa = new Map<string, { nomeExibicao: string, quantidade: number }>()
     leads.forEach(lead => {
       const norm = normalizarTexto(lead.cidade)
       if (!mapa.has(norm)) {
-        // Salva a primeira versão original encontrada para exibir bonito na tela
         mapa.set(norm, { nomeExibicao: lead.cidade || 'Desconhecida', quantidade: 0 })
       }
       mapa.get(norm)!.quantidade += 1
@@ -101,11 +123,9 @@ export default function CRM() {
     })
   }, [leads, cidadeSelecionada, bairroSelecionado, busca, filtroStatus])
 
-
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 font-sans pb-12">
       
-      {/* HEADER FIXO & BREADCRUMBS */}
       <div className="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto p-4 md:p-6">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
@@ -119,7 +139,6 @@ export default function CRM() {
             </div>
           </div>
 
-          {/* Rastro de Navegação (Pão de migalhas) */}
           <div className="mt-6 flex flex-wrap items-center gap-2 text-xs md:text-sm font-bold bg-slate-50 p-3 rounded-lg border border-slate-200 overflow-x-auto whitespace-nowrap">
             <button 
               onClick={() => { setCidadeSelecionada(null); setBairroSelecionado(null); }} 
@@ -153,12 +172,15 @@ export default function CRM() {
       <div className="max-w-7xl mx-auto p-4 md:p-6 mt-4">
         
         {carregando ? (
-          <div className="text-center py-20 text-slate-500 font-bold animate-pulse">
-            Carregando banco de dados da Volte...
+          <div className="text-center py-20 text-slate-500 font-bold flex flex-col items-center gap-4">
+            <svg className="animate-spin h-8 w-8 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <span>{statusCarga}</span>
           </div>
         ) : (
           <>
-            {/* NÍVEL 1: EXIBIÇÃO DE CIDADES */}
             {!cidadeSelecionada && (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {cidadesAgrupadas.map(cidade => (
@@ -179,7 +201,6 @@ export default function CRM() {
               </div>
             )}
 
-            {/* NÍVEL 2: EXIBIÇÃO DE BAIRROS (Após clicar em uma cidade) */}
             {cidadeSelecionada && !bairroSelecionado && (
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {bairrosAgrupados.map(bairro => (
@@ -198,15 +219,12 @@ export default function CRM() {
               </div>
             )}
 
-            {/* NÍVEL 3: EXIBIÇÃO DOS LEADS (Após clicar no Bairro) */}
             {cidadeSelecionada && bairroSelecionado && (
               <div className="space-y-4">
-                
-                {/* Filtros Internos do Bairro */}
                 <div className="bg-white p-4 rounded-xl shadow-sm border border-slate-200 grid grid-cols-1 md:grid-cols-2 gap-4">
                   <input 
                     type="text" 
-                    placeholder="🔍 Buscar restaurante ou telefone neste bairro..." 
+                    placeholder="🔍 Buscar restaurante ou telefone..." 
                     value={busca}
                     onChange={(e) => setBusca(e.target.value)}
                     className="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 outline-none font-medium"
@@ -225,7 +243,6 @@ export default function CRM() {
                   </select>
                 </div>
 
-                {/* VISÃO CELULAR: CARDS RESPONSIVOS */}
                 <div className="md:hidden space-y-4">
                   {leadsParaExibir.map(lead => (
                     <div key={lead.id} className="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 flex flex-col gap-4">
@@ -280,7 +297,6 @@ export default function CRM() {
                   ))}
                 </div>
 
-                {/* VISÃO DESKTOP (NOTEBOOK/PC): TABELA CLÁSSICA */}
                 <div className="hidden md:block bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
                   <table className="w-full text-left whitespace-nowrap">
                     <thead className="bg-slate-50 border-b border-slate-200">
